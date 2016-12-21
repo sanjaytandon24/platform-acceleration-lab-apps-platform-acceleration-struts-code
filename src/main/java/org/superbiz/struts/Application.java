@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
+import javax.servlet.Filter;
+
 import static java.util.Collections.singletonList;
 
 @SpringBootApplication
@@ -19,28 +21,25 @@ public class Application {
 
     @Bean
     public FilterRegistrationBean filterDispatcher() {
-        FilterRegistrationBean registration = new FilterRegistrationBean();
-        registration.setFilter(new FilterDispatcher());
-        registration.setUrlPatterns(singletonList("/*"));
-        registration.setOrder(0);
-        return registration;
+        return buildFilterRegistration(0, new FilterDispatcher());
     }
 
     @Bean
     public FilterRegistrationBean actionContextCleanup() {
-        FilterRegistrationBean registration = new FilterRegistrationBean();
-        registration.setFilter(new ActionContextCleanUp());
-        registration.setUrlPatterns(singletonList("/*"));
-        registration.setOrder(1);
-        return registration;
+        return buildFilterRegistration(1, new ActionContextCleanUp());
     }
 
     @Bean
     public FilterRegistrationBean sitemeshPageFilter() {
+        return buildFilterRegistration(2, new PageFilter());
+    }
+
+
+    private FilterRegistrationBean buildFilterRegistration(int order, Filter filter) {
         FilterRegistrationBean registration = new FilterRegistrationBean();
-        registration.setFilter(new PageFilter());
+        registration.setFilter(filter);
         registration.setUrlPatterns(singletonList("/*"));
-        registration.setOrder(2);
+        registration.setOrder(order);
         return registration;
     }
 }
