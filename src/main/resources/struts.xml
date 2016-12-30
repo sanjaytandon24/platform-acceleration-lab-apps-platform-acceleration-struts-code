@@ -22,9 +22,6 @@
 <struts>
   <constant name="struts.devMode" value="true"></constant>
   <package name="default" namespace="/" extends="struts-default">
-    <action name="" class="org.superbiz.struts.Index">
-      <result>/index.jsp</result>
-    </action>
     <action name="addUserForm" class="org.superbiz.struts.AddUserForm">
       <result>/addUserForm.jsp</result>
     </action>
