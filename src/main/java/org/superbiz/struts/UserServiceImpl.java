@@ -25,7 +25,7 @@ import java.util.List;
 @Stateless
 public class UserServiceImpl implements UserService {
 
-    @PersistenceContext(unitName = "user")
+    @PersistenceContext
     private EntityManager manager;
 
     public void add(User user) {
