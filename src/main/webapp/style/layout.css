@@ -51,7 +51,7 @@ body {
     min-height: 40vh;
 }
 
-#footer {
+div#footer {
     color: white;
     background-color: #333;
     padding: 16px;

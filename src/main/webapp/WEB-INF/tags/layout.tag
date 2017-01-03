@@ -1,4 +1,3 @@
-<%@tag description="Layout Tag" pageEncoding="UTF-8" %>
 <%@attribute name="title" %>
 
 <!DOCTYPE>

@@ -43,8 +43,6 @@ public class Application {
             "/decorators/layout.jsp",
             "/addedUser.action",
             "/addedUser.jsp",
-            "/addUserForm.action",
-            "/addUserForm.jsp",
             "/findUser.action",
             "/findUser.jsp",
             "/findUserForm.action",
