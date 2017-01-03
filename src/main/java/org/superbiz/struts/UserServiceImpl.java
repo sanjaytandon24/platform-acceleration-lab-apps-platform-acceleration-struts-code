@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
         manager.persist(user);
     }
 
-    public User find(int id) {
+    public User find(long id) {
         return manager.find(User.class, id);
     }
 

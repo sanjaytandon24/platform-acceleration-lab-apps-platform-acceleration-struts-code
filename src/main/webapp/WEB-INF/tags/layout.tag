@@ -13,7 +13,7 @@
 
     <div id="header">
         <a href="addUser">Add User</a>
-        <a href="findUserForm.action">Find User</a>
+        <a href="findUser">Find User</a>
         <a href="listAllUsers.action">List all users</a>
     </div>
 

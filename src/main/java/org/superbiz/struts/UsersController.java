@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class UsersController {
@@ -36,5 +37,23 @@ public class UsersController {
         }
 
         return "addedUser";
+    }
+
+    @GetMapping("/findUser")
+    public String findUserForm() {
+        return "findUserForm";
+    }
+
+    @PostMapping("/findUser")
+    public String findUser(@RequestParam long id, Model model) {
+        User user = userService.find(id);
+
+        if (user == null) {
+            model.addAttribute("errorMessage", "User not found");
+            return "findUserForm";
+        }
+
+        model.addAttribute("user", user);
+        return "displayUser";
     }
 }
