@@ -23,11 +23,8 @@
   <constant name="struts.devMode" value="true"></constant>
 
     <package name="default" namespace="/" extends="struts-default">
-    <action name="addUser" class="org.superbiz.struts.AddUser">
-      <result name="success">/addedUser.jsp</result>
-      <result name='failure'>/addUserForm.jsp</result>
-    </action>
-    <action name="findUserForm" class="org.superbiz.struts.FindUserForm">
+
+        <action name="findUserForm" class="org.superbiz.struts.FindUserForm">
       <result>/findUserForm.jsp</result>
     </action>
     <action name="findUser" class="org.superbiz.struts.FindUser">

@@ -41,8 +41,6 @@ public class Application {
         registration.setFilter(filter);
         registration.setUrlPatterns(asList(
             "/decorators/layout.jsp",
-            "/addedUser.action",
-            "/addedUser.jsp",
             "/findUser.action",
             "/findUser.jsp",
             "/findUserForm.action",
