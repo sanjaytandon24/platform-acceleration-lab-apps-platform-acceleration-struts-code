@@ -23,7 +23,7 @@ public interface UserService {
 
     public void add(User user);
 
-    public User find(int id);
+    public User find(long id);
 
     public List<User> findAll();
 }
