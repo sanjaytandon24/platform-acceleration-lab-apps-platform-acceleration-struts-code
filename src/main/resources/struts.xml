@@ -39,6 +39,8 @@
     <action name="listAllUsers" class="org.superbiz.struts.ListAllUsers">
       <result>/displayUsers.jsp</result>
     </action>
-
+    <action name="" class="org.superbiz.struts.Index">
+      <result>/index.jsp</result>
+    </action>
   </package>
 </struts>

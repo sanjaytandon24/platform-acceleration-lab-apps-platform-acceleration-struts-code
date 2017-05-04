@@ -17,30 +17,19 @@
 */
 package org.superbiz.struts;
 
-import org.springframework.stereotype.Repository;
+import com.opensymphony.xwork2.ActionSupport;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.util.List;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import java.util.Properties;
 
+public class Index  extends ActionSupport {
 
-@Repository
-public class UserServiceImpl implements UserService {
+   // @Autowired
+   // private UserService service;
 
-    @PersistenceContext
-    private EntityManager manager;
-
-    public void add(User user) {
-        manager.persist(user);
-    }
-
-    public User find(long id) {
-        return manager.find(User.class, id);
-    }
-
-    public List<User> findAll() {
-        return manager.createQuery("select u from User u").getResultList();
-    }
 
 }
